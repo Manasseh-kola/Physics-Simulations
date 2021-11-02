@@ -3,17 +3,13 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-
-
-
 addEventListener('resize', () => {
   canvas.width = innerWidth
   canvas.height = innerHeight
   init()
 })
 
-
-//Pendulum constructor
+//Ball constructor
 function Ball(x,y,radius,color){
     this.radius = radius;
     this.color = color;
@@ -25,22 +21,16 @@ function Ball(x,y,radius,color){
     this.damping = 0.98;
 
     this.update = function(){
-        
         if(this.y+this.radius >= canvas.height){
             this.velocity = -this.velocity*this.damping
         }else{
             this.velocity += this.gravity
         }
         this.draw();
-        this.y += this.velocity
-       
-  
-
-        
+        this.y += this.velocity 
     };
 
     this.draw = function(){
-
         c.beginPath();
         c.arc(this.x,this.y,this.radius,0,Math.PI*2,false);
         c.fillStyle = this.color;
