@@ -11,7 +11,7 @@ addEventListener('resize', () => {
 })
 
 
-//Pendulum constructor
+//Constructor
 function Circle(x,y,radius,color){
     this.radius = radius;
     this.color = color;
