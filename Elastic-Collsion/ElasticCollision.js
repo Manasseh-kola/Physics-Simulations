@@ -105,10 +105,6 @@ function Particle(x,y,radius,color){
             this.velocity.y = -this.velocity.y;
         };
 
-  
-
-
-
         this.x += this.velocity.x;
         this.y += this.velocity.y;
     };
@@ -130,8 +126,6 @@ let particles;
 
 function init(){
     particles = [];
-  
-
     for (let i = 0; i < 100; i++) {
         const radius = 20;
         let x = randomInt(radius,canvas.width-radius);
